@@ -36,7 +36,7 @@ namespace WindowsFormsApp2._0._1
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadIdentity();
             LoadOrthoMatrix();
-            
+
             IsomatricView();
 
             GL.PushMatrix();
@@ -94,14 +94,14 @@ namespace WindowsFormsApp2._0._1
         {
             changed = false;
 
-            oldx = newx; oldy = newy;
-            newx =  e.X;
-            newy =  e.Y;
-            dx += (newx - oldx);
-            dy += (newy - oldy);
+    
+            //newx =  e.X;
+            //newy =  e.Y;
+            //dx = (newx - oldx);
+            //dy = (newy - oldy);
 
-            //dx += (e.X - oldx);
-            //dy += (e.Y - oldy);
+            dx += (e.X - oldx);
+            dy += (e.Y - oldy);
 
             //oldx = e.X;oldy = e.Y;
             //dx = glControl1.Width - e.X;
@@ -113,7 +113,7 @@ namespace WindowsFormsApp2._0._1
                 return;
 
 
-            if (e.Button == MouseButtons.Left)
+            if (e.Button== MouseButtons.Left)
             {
                 ax = dy; ay = dx; az = 0.0;
                 angle = Vlen(ax, ay, az) / (double)(viewport[2] + 1) * (180.0);
@@ -131,17 +131,17 @@ namespace WindowsFormsApp2._0._1
                 //GL.Translate(zprReferencePoint[0], zprReferencePoint[1], zprReferencePoint[2]);
                 //GL.Rotate(angle, bx, by, bz);
                 //GL.Translate(-zprReferencePoint[0], -zprReferencePoint[1], -zprReferencePoint[2]);
-               //  IsomatricView();
-
+                //  IsomatricView();
+                
 
                 changed = true;
             }
-           // oldx = dx;oldy = dy;
-           if (changed)
+             oldx = dx;oldy = dy;
+            if (changed)
                 getMatrix();
-            
+
             glControl1.Invalidate();
-            
+
         }
         void getMatrix()
         {
