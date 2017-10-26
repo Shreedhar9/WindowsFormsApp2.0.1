@@ -40,9 +40,9 @@ namespace WindowsFormsApp2._0._1
             int h = glControl1.Height;
             GL.MatrixMode(MatrixMode.Projection);
             GL.LoadIdentity();
-            float FOVradians =MathHelper.DegreesToRadians(50);
-            Matrix4 perspective = Matrix4.CreatePerspectiveFieldOfView(FOVradians, w/h, 1, 4000);
-            GL.MultMatrix(ref perspective);
+            //float FOVradians =MathHelper.DegreesToRadians(50);
+            //Matrix4 perspective = Matrix4.CreatePerspectiveFieldOfView(FOVradians, w/h, 1, 4000);
+            //GL.MultMatrix(ref perspective);
             GL.Ortho(0, glControl1.Width, 0, glControl1.Height, -1, 1);
             GL.Viewport(0, 0, w, h);
         }

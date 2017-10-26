@@ -54,7 +54,25 @@ namespace WindowsFormsApp2._0._1
 
         private void glControl1_Paint(object sender, PaintEventArgs e)
         {
-            
+            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+            // Clear The Screen And The Depth Buffer
+            GL.LoadIdentity();
+            GL.Begin(BeginMode.Quads);
+            GL.BindBuffer(BufferTarget.ArrayBuffer, 2);
+            //GL.BufferData<Vector3>(BufferTarget.ArrayBuffer, (IntPtr)(Vector3.SizeInBytes * vertices.Length), vertices, BufferUsageHint.DynamicDraw);
+            GL.EnableClientState(ArrayCap.VertexArray);
+            GL.VertexPointer(2, VertexPointerType.Double, Vector3.SizeInBytes, 0);
+            GL.TexCoord2(0.5, 0.5);
+            GL.Color3(Color.Black);
+
+            GL.DrawArrays(BeginMode.Quads, 0, 24);
+            GL.End();
+
+            GL.Enable(EnableCap.CullFace);
+            GL.Enable(EnableCap.DepthClamp);//imp line
+
+            GL.PopMatrix();
+            glControl1.SwapBuffers();
         }
 
         private void Form4_Load(object sender, EventArgs e)

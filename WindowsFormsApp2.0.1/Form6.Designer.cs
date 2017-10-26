@@ -1,8 +1,6 @@
-﻿using OpenTK;
-
-namespace WindowsFormsApp2._0._1
+﻿namespace WindowsFormsApp2._0._1
 {
-    partial class Form2
+    partial class Form6
     {
         /// <summary>
         /// Required designer variable.
@@ -21,7 +19,7 @@ namespace WindowsFormsApp2._0._1
             }
             base.Dispose(disposing);
         }
-        private GLControl gLControl;
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -30,34 +28,35 @@ namespace WindowsFormsApp2._0._1
         /// </summary>
         private void InitializeComponent()
         {
-            this.gLControl = new OpenTK.GLControl();
+            this.glControl1 = new OpenTK.GLControl();
             this.SuspendLayout();
             // 
-            // gLControl
+            // glControl1
             // 
-            this.gLControl.BackColor = System.Drawing.Color.Black;
-            this.gLControl.Location = new System.Drawing.Point(0, 0);
-            this.gLControl.Name = "gLControl";
-            this.gLControl.Size = new System.Drawing.Size(725, 500);
-            this.gLControl.TabIndex = 0;
-            this.gLControl.VSync = false;
-            this.gLControl.Load += new System.EventHandler(this.gLControl_Load);
-            this.gLControl.Paint += new System.Windows.Forms.PaintEventHandler(this.gLControl_Paint);
-            this.gLControl.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gLControl_KeyDown);
-            this.gLControl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gLControl_MouseMove);
+            this.glControl1.BackColor = System.Drawing.Color.Black;
+            this.glControl1.Location = new System.Drawing.Point(12, 12);
+            this.glControl1.Name = "glControl1";
+            this.glControl1.Size = new System.Drawing.Size(367, 361);
+            this.glControl1.TabIndex = 0;
+            this.glControl1.VSync = false;
+            this.glControl1.Load += new System.EventHandler(this.glControl1_Load);
+            this.glControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.glControl1_Paint);
+            this.glControl1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControl1_MouseMove);
             // 
-            // Form2
+            // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 512);
-            this.Controls.Add(this.gLControl);
-            this.Name = "Form2";
-            this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.ClientSize = new System.Drawing.Size(391, 385);
+            this.Controls.Add(this.glControl1);
+            this.Name = "Form6";
+            this.Text = "Form6";
             this.ResumeLayout(false);
 
         }
+
         #endregion
+
+        private OpenTK.GLControl glControl1;
     }
 }
